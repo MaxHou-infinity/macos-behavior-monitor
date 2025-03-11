@@ -1,0 +1,22 @@
+# MacOS用户行为实时记录工具依赖包
+
+# 核心依赖
+pyobjc>=6.0  # macOS Objective-C 桥接（包含所有必要的子包）
+cryptography>=36.0.0  # 用于加密功能
+
+# Web界面依赖
+flask>=2.0.0  # Web框架
+flask-socketio>=5.0.0  # 用于实时通信
+python-socketio>=5.0.0  # Socket.IO客户端和服务器
+gevent>=20.0.0  # 异步I/O框架
+gevent-websocket>=0.10.1  # WebSocket支持
+
+# 工具依赖
+python-dateutil>=2.8.0  # 日期时间处理
+json5>=0.9.0  # JSON处理
+requests>=2.25.0  # HTTP请求
+
+# 开发工具
+pytest>=6.0.0  # 单元测试
+black>=21.0.0  # 代码格式化
+flake8>=4.0.0  # 代码检查

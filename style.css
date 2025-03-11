@@ -1,0 +1,249 @@
+/* MacOS用户行为实时记录工具 - 样式表 */
+
+/* 基础样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    background-color: #0071e3;
+    color: white;
+    height: 100vh;
+    padding: 20px 0;
+    position: fixed;
+    width: 140px;
+    z-index: 100;
+}
+
+.sidebar h2 {
+    font-size: 16px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.sidebar-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-item.active {
+    border-left: 3px solid white;
+}
+
+/* 内容区域样式 */
+.content {
+    margin-left: 140px;
+    padding: 20px;
+}
+
+/* 卡片样式 */
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background-color: #0071e3;
+    border-color: #0071e3;
+}
+
+.btn-primary:hover {
+    background-color: #005bbf;
+    border-color: #005bbf;
+}
+
+.btn-danger {
+    background-color: #ff3b30;
+    border-color: #ff3b30;
+}
+
+.btn-danger:hover {
+    background-color: #d63029;
+    border-color: #d63029;
+}
+
+.btn-warning {
+    background-color: #ff9500;
+    border-color: #ff9500;
+}
+
+.btn-warning:hover {
+    background-color: #d67e00;
+    border-color: #d67e00;
+}
+
+/* 事件项样式 */
+.event-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.event-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 不同事件类型的颜色 */
+.event-mouse-move {
+    background-color: rgba(52, 199, 89, 0.1);
+    border-left: 3px solid #34c759;
+}
+
+.event-mouse-click {
+    background-color: rgba(0, 122, 255, 0.1);
+    border-left: 3px solid #007aff;
+}
+
+.event-key-press {
+    background-color: rgba(255, 149, 0, 0.1);
+    border-left: 3px solid #ff9500;
+}
+
+.event-key-release {
+    background-color: rgba(175, 82, 222, 0.1);
+    border-left: 3px solid #af52de;
+}
+
+.event-mouse-scroll {
+    background-color: rgba(90, 200, 250, 0.1);
+    border-left: 3px solid #5ac8fa;
+}
+
+/* 事件头部样式 */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.event-time {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.event-details {
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    display: none;
+}
+
+.event-item.expanded .event-details {
+    display: block;
+}
+
+/* 表单开关样式 */
+.form-switch .form-check-input {
+    width: 3em;
+}
+
+.form-check-input:checked {
+    background-color: #0071e3;
+    border-color: #0071e3;
+}
+
+/* 提示框样式 */
+.alert {
+    animation: fadeOut 5s forwards;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 300px;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* 加载动画样式 */
+.loading-wave {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-bar {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #0071e3;
+    border-radius: 5px;
+    animation: loading-wave-animation 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loading-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes loading-wave-animation {
+    0% {
+        height: 10px;
+    }
+    50% {
+        height: 50px;
+    }
+    100% {
+        height: 10px;
+    }
+}
+
+/* 错误信息样式 */
+.error-message {
+    color: #ff3b30;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+}
